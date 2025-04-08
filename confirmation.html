@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Sunny Shades</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sunny Shades</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="index.html#cart">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="confirmation">
+            <h2>Order Confirmation</h2>
+            <div class="confirmation-container">
+                <div class="confirmation-message">
+                    <h3>Thank you for your order!</h3>
+                    <p>Your order has been received and is being processed.</p>
+                    <p>We will send you an email confirmation shortly.</p>
+                </div>
+                <div class="order-details">
+                    <h3>Order Details</h3>
+                    <p>Order Number: #<span id="order-number">12345</span></p>
+                    <p>Item: <span id="confirmation-item">Selected Item</span></p>
+                    <p>Total: <span id="confirmation-total">$0.00</span></p>
+                </div>
+                <a href="index.html#products" class="continue-shopping">Continue Shopping</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sunny Shades. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get URL parameters from the checkout page
+        const urlParams = new URLSearchParams(window.location.search);
+        const product = urlParams.get('product');
+        const price = urlParams.get('price');
+        const fullname = urlParams.get('fullname');
+        const email = urlParams.get('email');
+
+        // Update confirmation details if available
+        if (product && price) {
+            const confirmationItem = document.getElementById('confirmation-item');
+            const confirmationTotal = document.getElementById('confirmation-total');
+
+            confirmationItem.textContent = product;
+            confirmationTotal.textContent = `$${price}`;
+        }
+    </script>
+</body>
+</html> 

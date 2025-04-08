@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunglasses Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sunny Shades</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#cart">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="products" class="products">
+            <div class="product">
+                <img src="aviator.webp" alt="Classic Aviator">
+                <h2>Classic Aviator</h2>
+                <p class="price">$99.99</p>
+                <p class="description">Timeless aviator sunglasses with UV protection</p>
+                <form action="#cart" method="get">
+                    <input type="hidden" name="product" value="Classic Aviator">
+                    <input type="hidden" name="price" value="99.99">
+                    <button type="submit" class="buy-button">Add to Cart</button>
+                </form>
+            </div>
+
+            <div class="product">
+                <img src="roud retro.jpg" alt="Round Retro">
+                <h2>Round Retro</h2>
+                <p class="price">$79.99</p>
+                <p class="description">Vintage-inspired round sunglasses</p>
+                <form action="#cart" method="get">
+                    <input type="hidden" name="product" value="Round Retro">
+                    <input type="hidden" name="price" value="79.99">
+                    <button type="submit" class="buy-button">Add to Cart</button>
+                </form>
+            </div>
+
+            <div class="product">
+                <img src="Sport Shield.jpg" alt="Sport Shield">
+                <h2>Sport Shield</h2>
+                <p class="price">$129.99</p>
+                <p class="description">Polarized sports sunglasses</p>
+                <form action="#cart" method="get">
+                    <input type="hidden" name="product" value="Sport Shield">
+                    <input type="hidden" name="price" value="129.99">
+                    <button type="submit" class="buy-button">Add to Cart</button>
+                </form>
+            </div>
+
+            <div class="product">
+                <img src="cat eye.jpg" alt="Cat Eye">
+                <h2>Cat Eye</h2>
+                <p class="price">$89.99</p>
+                <p class="description">Elegant cat-eye sunglasses</p>
+                <form action="#cart" method="get">
+                    <input type="hidden" name="product" value="Cat Eye">
+                    <input type="hidden" name="price" value="89.99">
+                    <button type="submit" class="buy-button">Add to Cart</button>
+                </form>
+            </div>
+
+            <div class="product">
+                <img src="Square Frame.jpg" alt="Square Frame">
+                <h2>Square Frame</h2>
+                <p class="price">$69.99</p>
+                <p class="description">Modern square frame sunglasses</p>
+                <form action="#cart" method="get">
+                    <input type="hidden" name="product" value="Square Frame">
+                    <input type="hidden" name="price" value="69.99">
+                    <button type="submit" class="buy-button">Add to Cart</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="cart" class="cart">
+            <h2>Your Cart</h2>
+            <div class="cart-items">
+                <div class="cart-item">
+                    <h3>Selected Item</h3>
+                    <p class="cart-price">$0.00</p>
+                    <form action="#products" method="get">
+                        <button type="submit" class="remove-button">Remove</button>
+                    </form>
+                </div>
+            </div>
+            <div class="cart-total">
+                <h3>Total: $0.00</h3>
+                <a href="checkout.html" class="checkout-button">Proceed to Checkout</a>
+            </div>
+        </section>
+
+        <section id="checkout" class="checkout">
+            <h2>Checkout</h2>
+            <div class="checkout-container">
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-item">
+                        <p class="item-name">Selected Item</p>
+                        <p class="item-price">$0.00</p>
+                    </div>
+                    <div class="summary-total">
+                        <h3>Total</h3>
+                        <p class="total-price">$0.00</p>
+                    </div>
+                </div>
+
+                <form class="checkout-form" action="#confirmation" method="get">
+                    <h3>Customer Information</h3>
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" name="fullname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Shipping Address</label>
+                        <textarea id="address" name="address" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <input type="text" id="state" name="state" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="zip">ZIP Code</label>
+                        <input type="text" id="zip" name="zip" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="payment">Payment Method</label>
+                        <select id="payment" name="payment" required>
+                            <option value="">Select Payment Method</option>
+                            <option value="credit">Credit Card</option>
+                            <option value="debit">Debit Card</option>
+                            <option value="paypal">PayPal</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-order">Place Order</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="confirmation" class="confirmation">
+            <h2>Order Confirmation</h2>
+            <div class="confirmation-container">
+                <div class="confirmation-message">
+                    <h3>Thank you for your order!</h3>
+                    <p>Your order has been received and is being processed.</p>
+                    <p>We will send you an email confirmation shortly.</p>
+                </div>
+                <div class="order-details">
+                    <h3>Order Details</h3>
+                    <p>Order Number: #<span id="order-number">12345</span></p>
+                    <p>Item: <span id="confirmation-item">Selected Item</span></p>
+                    <p>Total: <span id="confirmation-total">$0.00</span></p>
+                </div>
+                <a href="#products" class="continue-shopping">Continue Shopping</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sunny Shades. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const product = urlParams.get('product');
+        const price = urlParams.get('price');
+
+        // Update cart if product is selected
+        if (product && price) {
+            const cartItem = document.querySelector('.cart-item h3');
+            const cartPrice = document.querySelector('.cart-price');
+            const cartTotal = document.querySelector('.cart-total h3');
+            const checkoutButton = document.querySelector('.checkout-button');
+            const confirmationItem = document.getElementById('confirmation-item');
+            const confirmationTotal = document.getElementById('confirmation-total');
+
+            cartItem.textContent = product;
+            cartPrice.textContent = `$${price}`;
+            cartTotal.textContent = `Total: $${price}`;
+            confirmationItem.textContent = product;
+            confirmationTotal.textContent = `$${price}`;
+            
+            // Add product and price to checkout URL
+            checkoutButton.href = `checkout.html?product=${encodeURIComponent(product)}&price=${encodeURIComponent(price)}`;
+        }
+    </script>
+</body>
+</html> 
